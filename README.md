@@ -25,7 +25,7 @@ Este folosit pentru a stoca poziții și pentru a gestiona mișcarea șarpelui �
 </ul>
            </ol >
 
-           
+           <ol>
  <li>snake.hpp: </li>
            <ul>
 <li>Scop: Reprezintă șarpele și comportamentul său.Stochează segmentul șarpelui într-un array de tip Point, fiecare element reprezentând o parte din corpul șarpelui.
@@ -40,7 +40,7 @@ Gestionează mișcarea șarpelui, creșterea acestuia atunci când mănâncă un
 <li>Grow(): Crește lungimea șarpelui adăugând un segment suplimentar la coadă, copiat din ultima poziție cunoscută a cozii.</il>
 <li>GetHeadPosition(): Returnează poziția capului șarpelui (segmentul de la indexul 0 din array-ul segments).</il>
 </ul>
-
+</ol>
        
  <li>board.hpp: </li>
 Scop: Reprezintă tabla de joc (zona în care se mișcă șarpele și apar merele).Stochează dimensiunea tablei de joc (lățime și înălțime).
