@@ -2,16 +2,14 @@
 <html>
 <head>
 <title> SnakeGame </title>
-</head>
-<body >
+
     <ul>
         <li>Lista punct 1</li>
         <li>Lista punct 2</li>
         .......
         <li>Lista punct n</li>
     </ul>
-</body>
-</html>
+
 
 1. Denumirea proiectului:
 SnakeGame
