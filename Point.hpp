@@ -5,3 +5,4 @@ struct Point {
     int y;
 };
 
+
