@@ -24,7 +24,7 @@ Este folosit pentru a stoca poziții și pentru a gestiona mișcarea șarpelui �
 <li>Constructor cu parametri: Permite inițializarea unui punct cu valori specifice pentru x și y.</il>
 </ul>
            </ol >
-
+<body>
            <ol>
  <li>snake.hpp: </li>
            <ul>
@@ -41,7 +41,7 @@ Gestionează mișcarea șarpelui, creșterea acestuia atunci când mănâncă un
 <li>GetHeadPosition(): Returnează poziția capului șarpelui (segmentul de la indexul 0 din array-ul segments).</il>
 </ul>
 </ol>
-       
+</body> 
  <li>board.hpp: </li>
 Scop: Reprezintă tabla de joc (zona în care se mișcă șarpele și apar merele).Stochează dimensiunea tablei de joc (lățime și înălțime).
 Gestionează desenarea tablei și a elementelor din interior (șarpele, merele, etc.).
