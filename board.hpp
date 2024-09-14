@@ -1,4 +1,4 @@
-```cpp
+
 #pragma once
 
 class Board {
