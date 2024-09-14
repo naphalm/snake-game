@@ -24,10 +24,19 @@ Este folosit pentru a stoca poziții și pentru a gestiona mișcarea șarpelui �
 <li>Constructor implicit: Inițializează coordonatele x și y la valoarea 0.</il>
 <li>Constructor cu parametri: Permite inițializarea unui punct cu valori specifice pentru x și y.</il>
 </ul>
-           
+    <body >
+    <ol>       
  <li>snake.hpp: </li>
-Scop: Reprezintă șarpele și comportamentul său.Stochează segmentul șarpelui într-un array de tip Point, fiecare element reprezentând o parte din corpul șarpelui.
+<li>Scop: Reprezintă șarpele și comportamentul său.Stochează segmentul șarpelui într-un array de tip Point, fiecare element reprezentând o parte din corpul șarpelui.
 Gestionează mișcarea șarpelui, creșterea acestuia atunci când mănâncă un măr și detectarea coliziunilor.
+<ul>
+<li>Clasa Snake: Această clasă gestionează comportamentul șarpelui în joc, incluzând poziția segmentelor și mișcarea.</il>
+<li>segments[100]: Un array de 100 de segmente, fiecare reprezentat printr-un Point. Segmentele definesc pozițiile pe care le ocupă șarpele pe tablă.</il>
+<li>length: Reține lungimea actuală a șarpelui, adică numărul de segmente active.</il>
+<li>Constructorul Snake: Inițializează șarpele cu un singur segment plasat la o poziție fixă (de exemplu, coordonatele (10, 10)).</il>
+<li>Move(Point direction): Mișcă șarpele într-o direcție specificată (ex.: stânga, dreapta, sus, jos) prin actualizarea poziției fiecărui segment, astfel încât capul șarpelui să fie mutat în direcția indicată, iar celelalte segmente să urmeze.</il>
+<li>Grow(): Crește lungimea șarpelui adăugând un segment suplimentar la coadă, copiat din ultima poziție cunoscută a cozii.</il>
+<li>GetHeadPosition(): Returnează poziția capului șarpelui (segmentul de la indexul 0 din array-ul segments).</il>
 
  <li>board.hpp: </li>
 Scop: Reprezintă tabla de joc (zona în care se mișcă șarpele și apar merele).Stochează dimensiunea tablei de joc (lățime și înălțime).
