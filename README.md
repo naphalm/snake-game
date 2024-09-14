@@ -46,17 +46,17 @@ Gestionează mișcarea șarpelui, creșterea acestuia atunci când mănâncă un
 
 
 
- <li>board.hpp: </li>
+ <li><b>board.hpp:</b> </li>
  <ul>
-<li>Scop: Reprezintă tabla de joc (zona în care se mișcă șarpele și apar merele).Stochează dimensiunea tablei de joc (lățime și înălțime).
+<li><b>Scop</b>: Reprezintă tabla de joc (zona în care se mișcă șarpele și apar merele).Stochează dimensiunea tablei de joc (lățime și înălțime).
 Gestionează desenarea tablei și a elementelor din interior (șarpele, merele, etc.).</li>
  </ul>
  <ul>
-<li> Clasa Board: Reprezintă tabla de joc pe care se desfășoară acțiunea jocului.</li>
-<li>width și height: Variabile care definesc dimensiunile tablei (lățime și înălțime).</li>
-<li>Constructorul Board: Inițializează tabla de joc cu dimensiunile specificate (de exemplu, o tablă de 20x20 sau alte dimensiuni definite de utilizator).</li>
-<li>GetWidth(): Returnează lățimea tablei, util pentru a stabili limitele mișcării șarpelui.</li>
-<li>GetHeight(): Returnează înălțimea tablei, similar cu lățimea, folosit pentru a verifica limitele superioare și inferioare ale tablei.</li>
+<li> <b>Clasa Board</b>: Reprezintă tabla de joc pe care se desfășoară acțiunea jocului.</li>
+<li><b>width și height</b>: Variabile care definesc dimensiunile tablei (lățime și înălțime).</li>
+<li><b>Constructorul Board</b>: Inițializează tabla de joc cu dimensiunile specificate (de exemplu, o tablă de 20x20 sau alte dimensiuni definite de utilizator).</li>
+<li><b>GetWidth</b>: Returnează lățimea tablei, util pentru a stabili limitele mișcării șarpelui.</li>
+<li><b>GetHeight</b>: Returnează înălțimea tablei, similar cu lățimea, folosit pentru a verifica limitele superioare și inferioare ale tablei.</li>
 </ul>
 </ol>
 </body>
