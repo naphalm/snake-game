@@ -13,7 +13,7 @@ SnakeGame este o implementare clasică a jocului retro "Snake", în care jucăto
  </body >
 Funcția fișierelor board.hpp, snake.hpp, și point.hpp:
 <body >
-    <ul>
+    <ol>
  <li>point.hpp: </li>
 Scop: Definește o structură de bază, Point, care reprezintă un punct în spațiu, cu coordonate x și y.Reprezintă locația pe tablă a șarpelui, a mărului sau a oricărui alt obiect.
 Este folosit pentru a stoca poziții și pentru a gestiona mișcarea șarpelui în funcție de coordonate.
