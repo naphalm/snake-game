@@ -1,7 +1,7 @@
 <body >
 <ol>
        
- <li><b> Denumirea proiectului</b>: </li>
+ <li><b> 'Denumirea proiectului'</b>: </li>
 SnakeGame
 
  <li><b>Ce reprezintă proiectul</b>: </li>
