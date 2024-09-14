@@ -40,12 +40,20 @@ Gestionează mișcarea șarpelui, creșterea acestuia atunci când mănâncă un
 <li>Grow(): Crește lungimea șarpelui adăugând un segment suplimentar la coadă, copiat din ultima poziție cunoscută a cozii.</il>
 <li>GetHeadPosition(): Returnează poziția capului șarpelui (segmentul de la indexul 0 din array-ul segments).</il>
 </ul>
-</ol>
+
 
 
 
  <li>board.hpp: </li>
+ <ul>
 Scop: Reprezintă tabla de joc (zona în care se mișcă șarpele și apar merele).Stochează dimensiunea tablei de joc (lățime și înălțime).
 Gestionează desenarea tablei și a elementelor din interior (șarpele, merele, etc.).
+ </ul>
+<li> Clasa Board: Reprezintă tabla de joc pe care se desfășoară acțiunea jocului.</li>
+<li>width și height: Variabile care definesc dimensiunile tablei (lățime și înălțime).</li>
+<li>Constructorul Board: Inițializează tabla de joc cu dimensiunile specificate (de exemplu, o tablă de 20x20 sau alte dimensiuni definite de utilizator).</li>
+<li>GetWidth(): Returnează lățimea tablei, util pentru a stabili limitele mișcării șarpelui.</li>
+<li>GetHeight(): Returnează înălțimea tablei, similar cu lățimea, folosit pentru a verifica limitele superioare și inferioare ale tablei.</li>
 </ul>
+</ol>
 </body>
