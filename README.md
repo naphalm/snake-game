@@ -13,6 +13,7 @@ Jocul se termină dacă șarpele lovește pereții sau dacă se lovește de prop
 Pe măsură ce șarpele mănâncă mâncare și crește, viteza jocului poate crește treptat, făcând jocul mai dificil.
 
 4. Tipuri de date noi declarate și explicații:
+
 . point.hpp:
 Aceasta definește o structură de bază numită Point, care reprezintă coordonatele bidimensionale (x, y) ale oricărui obiect în spațiul de joc.
 
