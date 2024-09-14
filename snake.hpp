@@ -1,5 +1,5 @@
 #pragma once
-#include "point.hpp"
+#include "Point.hpp"
 
 class Snake {
     Point segments[100];
