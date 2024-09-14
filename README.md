@@ -27,9 +27,9 @@ Este folosit pentru a stoca poziții și pentru a gestiona mișcarea șarpelui �
            
 
           
-<li></b>snake.hpp:</b> </li>
+<li><b>snake.hpp:</b> </li>
            <ul>
-<li></b>Scop</b>: Reprezintă șarpele și comportamentul său.Stochează segmentul șarpelui într-un array de tip Point, fiecare element reprezentând o parte din corpul șarpelui.
+<li><b>Scop</b>: Reprezintă șarpele și comportamentul său.Stochează segmentul șarpelui într-un array de tip Point, fiecare element reprezentând o parte din corpul șarpelui.
 Gestionează mișcarea șarpelui, creșterea acestuia atunci când mănâncă un măr și detectarea coliziunilor.
 </ul>
 <ul>
