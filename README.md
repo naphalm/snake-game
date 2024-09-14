@@ -29,17 +29,17 @@ Este folosit pentru a stoca poziții și pentru a gestiona mișcarea șarpelui �
           
 <li><b>snake.hpp:</b> </li>
            <ul>
-<li><b><big>Scop</big></b>: Reprezintă șarpele și comportamentul său.Stochează segmentul șarpelui într-un array de tip Point, fiecare element reprezentând o parte din corpul șarpelui.
+<li><b>Scop</b>: Reprezintă șarpele și comportamentul său.Stochează segmentul șarpelui într-un array de tip Point, fiecare element reprezentând o parte din corpul șarpelui.
 Gestionează mișcarea șarpelui, creșterea acestuia atunci când mănâncă un măr și detectarea coliziunilor.
 </ul>
 <ul>
-<li>Clasa Snake: Această clasă gestionează comportamentul șarpelui în joc, incluzând poziția segmentelor și mișcarea.</il>
-<li>segments[100]: Un array de 100 de segmente, fiecare reprezentat printr-un Point. Segmentele definesc pozițiile pe care le ocupă șarpele pe tablă.</il>
-<li>length: Reține lungimea actuală a șarpelui, adică numărul de segmente active.</il>
-<li>Constructorul Snake: Inițializează șarpele cu un singur segment plasat la o poziție fixă (de exemplu, coordonatele (10, 10)).</il>
-<li>Move(Point direction): Mișcă șarpele într-o direcție specificată (ex.: stânga, dreapta, sus, jos) prin actualizarea poziției fiecărui segment, astfel încât capul șarpelui să fie mutat în direcția indicată, iar celelalte segmente să urmeze.</il>
-<li>Grow(): Crește lungimea șarpelui adăugând un segment suplimentar la coadă, copiat din ultima poziție cunoscută a cozii.</il>
-<li>GetHeadPosition(): Returnează poziția capului șarpelui (segmentul de la indexul 0 din array-ul segments).</il>
+<li><b>Clasa Snake</b>: Această clasă gestionează comportamentul șarpelui în joc, incluzând poziția segmentelor și mișcarea.</il>
+<li><b>segments[100]</b>: Un array de 100 de segmente, fiecare reprezentat printr-un Point. Segmentele definesc pozițiile pe care le ocupă șarpele pe tablă.</il>
+<li><b>length</b>: Reține lungimea actuală a șarpelui, adică numărul de segmente active.</il>
+<li><b>Constructorul Snake</b>: Inițializează șarpele cu un singur segment plasat la o poziție fixă (de exemplu, coordonatele (10, 10)).</il>
+<li><b>Move(Point direction)</b>: Mișcă șarpele într-o direcție specificată (ex.: stânga, dreapta, sus, jos) prin actualizarea poziției fiecărui segment, astfel încât capul șarpelui să fie mutat în direcția indicată, iar celelalte segmente să urmeze.</il>
+<li><b>Grow</b>: Crește lungimea șarpelui adăugând un segment suplimentar la coadă, copiat din ultima poziție cunoscută a cozii.</il>
+<li><b>GetHeadPosition</b>: Returnează poziția capului șarpelui (segmentul de la indexul 0 din array-ul segments).</il>
 </ul>
 
 
