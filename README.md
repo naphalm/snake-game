@@ -15,8 +15,11 @@ Funcția fișierelor board.hpp, snake.hpp, și point.hpp:
 <body >
     <ol>
  <li>point.hpp: </li>
-<ul><li></li></ul>Scop: Definește o structură de bază, Point, care reprezintă un punct în spațiu, cu coordonate x și y.Reprezintă locația pe tablă a șarpelui, a mărului sau a oricărui alt obiect.
-Este folosit pentru a stoca poziții și pentru a gestiona mișcarea șarpelui în funcție de coordonate.</il></ul>
+           <ul>
+<li> Scop: Definește o structură de bază, Point, care reprezintă un punct în spațiu, cu coordonate x și y.Reprezintă locația pe tablă a șarpelui, a mărului sau a oricărui alt obiect.
+Este folosit pentru a stoca poziții și pentru a gestiona mișcarea șarpelui în funcție de coordonate.</il>
+           </ul>
+           
 Structura Point: Această structură reprezintă o pereche de coordonate (x, y), folosite pentru a specifica poziția în spațiul bidimensional al tablei de joc.
 Constructor implicit: Inițializează coordonatele x și y la valoarea 0.
 Constructor cu parametri: Permite inițializarea unui punct cu valori specifice pentru x și y.
