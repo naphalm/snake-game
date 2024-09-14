@@ -24,9 +24,9 @@ Este folosit pentru a stoca poziții și pentru a gestiona mișcarea șarpelui �
 <li>Constructor cu parametri: Permite inițializarea unui punct cu valori specifice pentru x și y.</il>
 </ul>
            </ol >
-<body>
-           <ol>
- <li>snake.hpp: </li>
+
+          
+ <ol><li>snake.hpp: </li></ol>
            <ul>
 <li>Scop: Reprezintă șarpele și comportamentul său.Stochează segmentul șarpelui într-un array de tip Point, fiecare element reprezentând o parte din corpul șarpelui.
 Gestionează mișcarea șarpelui, creșterea acestuia atunci când mănâncă un măr și detectarea coliziunilor.
