@@ -1,20 +1,12 @@
-
 #pragma once
-
-#include "apple.hpp"
-#include "direction.hpp"
 #include "point.hpp"
 
 class Snake {
-   Point _segments[100];
-   int _nr_segments;
+    Point segments[100];
+    int length;
 public:
-   Snake();
-   Snake(const Point& _position);
-   void Move(Direction direction);
-   int GetSize() const;
-   Point GetPosition() const;
-   void Eat(const Apple& apple);
+    Snake();
+    void Move();
+    void Grow();
+    Point GetHeadPosition() const;
 };
-
-
