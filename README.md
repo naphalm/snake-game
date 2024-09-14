@@ -49,6 +49,7 @@ Gestionează mișcarea șarpelui, creșterea acestuia atunci când mănâncă un
 <li>Scop: Reprezintă tabla de joc (zona în care se mișcă șarpele și apar merele).Stochează dimensiunea tablei de joc (lățime și înălțime).
 Gestionează desenarea tablei și a elementelor din interior (șarpele, merele, etc.).</li>
  </ul>
+ <ul>
 <li> Clasa Board: Reprezintă tabla de joc pe care se desfășoară acțiunea jocului.</li>
 <li>width și height: Variabile care definesc dimensiunile tablei (lățime și înălțime).</li>
 <li>Constructorul Board: Inițializează tabla de joc cu dimensiunile specificate (de exemplu, o tablă de 20x20 sau alte dimensiuni definite de utilizator).</li>
