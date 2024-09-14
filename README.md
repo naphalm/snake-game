@@ -46,8 +46,8 @@ Gestionează mișcarea șarpelui, creșterea acestuia atunci când mănâncă un
 
  <li>board.hpp: </li>
  <ul>
-Scop: Reprezintă tabla de joc (zona în care se mișcă șarpele și apar merele).Stochează dimensiunea tablei de joc (lățime și înălțime).
-Gestionează desenarea tablei și a elementelor din interior (șarpele, merele, etc.).
+<li>Scop: Reprezintă tabla de joc (zona în care se mișcă șarpele și apar merele).Stochează dimensiunea tablei de joc (lățime și înălțime).
+Gestionează desenarea tablei și a elementelor din interior (șarpele, merele, etc.).</li>
  </ul>
 <li> Clasa Board: Reprezintă tabla de joc pe care se desfășoară acțiunea jocului.</li>
 <li>width și height: Variabile care definesc dimensiunile tablei (lățime și înălțime).</li>
