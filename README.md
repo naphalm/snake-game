@@ -1,25 +1,16 @@
-
-
-
 <body >
-    <ul>
-        <li>Lista punct 1</li>
-        <li>Lista punct 2</li>
-        .......
-        <li>Lista punct n</li>
-    </ul>
-</body>
-
-
-
-1. Denumirea proiectului:
+<ol>
+       
+ <li> Denumirea proiectului: </li>
 SnakeGame
 
-2. Ce reprezintă proiectul:
+ <li>Ce reprezintă proiectul: </li>
 SnakeGame este o implementare clasică a jocului retro "Snake", în care jucătorul controlează un șarpe 
 
-3.Regulile jocului Snake:Snake este un joc clasic în care jucătorul controlează un șarpe într-un spațiu limitat. Scopul jocului este ca șarpele să mănânce "mere" (sau alte obiecte) care apar în mod aleatoriu pe tablă. Cu fiecare măr mâncat, șarpele crește în lungime, iar jocul devine mai dificil deoarece șarpele nu trebuie să se lovească de pereți sau să se auto-colizioneze. Jocul continuă până când jucătorul face o greșeală, moment în care șarpele moare.
+ <li>Regulile jocului Snake:Snake este un joc clasic în care jucătorul controlează un șarpe într-un spațiu limitat. Scopul jocului este ca șarpele să mănânce "mere" (sau alte obiecte) care apar în mod aleatoriu pe tablă. Cu fiecare măr mâncat, șarpele crește în lungime, iar jocul devine mai dificil deoarece șarpele nu trebuie să se lovească de pereți sau să se auto-colizioneze. Jocul continuă până când jucătorul face o greșeală, moment în care șarpele moare. </li>
 
+ </ol>
+ </body >
 Funcția fișierelor board.hpp, snake.hpp, și point.hpp:
 <body >
     <ul>
