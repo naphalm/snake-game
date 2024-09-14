@@ -27,8 +27,10 @@ Este folosit pentru a stoca poziții și pentru a gestiona mișcarea șarpelui �
     <body >
     <ol>       
  <li>snake.hpp: </li>
+           <ul>
 <li>Scop: Reprezintă șarpele și comportamentul său.Stochează segmentul șarpelui într-un array de tip Point, fiecare element reprezentând o parte din corpul șarpelui.
 Gestionează mișcarea șarpelui, creșterea acestuia atunci când mănâncă un măr și detectarea coliziunilor.
+</ul>
 <ul>
 <li>Clasa Snake: Această clasă gestionează comportamentul șarpelui în joc, incluzând poziția segmentelor și mișcarea.</il>
 <li>segments[100]: Un array de 100 de segmente, fiecare reprezentat printr-un Point. Segmentele definesc pozițiile pe care le ocupă șarpele pe tablă.</il>
