@@ -60,3 +60,15 @@ Gestionează desenarea tablei și a elementelor din interior (șarpele, merele, 
 </ul>
 </ol>
 </body>
+
+
+
+<li><b>point.cpp:</b> </li>
+ <ul>
+<li><b>Scop</b>: În point.cpp, nu este nevoie de cod suplimentar, deoarece structura Point a fost deja definită în fișierul header point.hpp, iar constructorii implicați sunt automat generați de compilator pentru structura respectivă.</li>
+ </ul>
+ <ul>
+<li> <b>Structura</b>:Point are doi membri: x și y, care reprezintă coordonatele unui punct pe tabla de joc.</li>
+</ul>
+</ol>
+</body>
