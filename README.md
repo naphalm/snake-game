@@ -58,8 +58,7 @@ Gestionează desenarea tablei și a elementelor din interior (șarpele, merele, 
 <li><b>GetWidth</b>: Returnează lățimea tablei, util pentru a stabili limitele mișcării șarpelui.</li>
 <li><b>GetHeight</b>: Returnează înălțimea tablei, similar cu lățimea, folosit pentru a verifica limitele superioare și inferioare ale tablei.</li>
 </ul>
-</ol>
-</body>
+
 
 
 
