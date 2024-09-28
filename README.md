@@ -62,6 +62,20 @@ Gestionează desenarea tablei și a elementelor din interior (șarpele, merele, 
 
 
 
+
+<li><b>snake.cpp:</b> </li>
+           <ul>
+<li><b>Constructorul Snake()</b>: Inițializează șarpele la poziția de start (10, 10) și setează lungimea inițială a șarpelui la 1 segment.
+</ul>
+<ul>
+<li><b>Funcția Move()</b>: Mută șarpele într-o direcție specificată. Mai întâi, fiecare segment preia poziția segmentului din fața sa, apoi capul șarpelui se mișcă în direcția dată de parametrul direction (care este un punct cu valori x și y).</il>
+<li><b>Funcția Grow()</b>: Adaugă un nou segment la șarpe, crescând lungimea acestuia. Noul segment va avea aceeași poziție ca ultimul segment din coadă. Aceasta permite creșterea șarpelui după ce mănâncă un măr.</il>
+<li><b>Funcția GetHeadPosition()</b>: Returnează poziția capului șarpelui, folosind primul segment din array-ul de segmente.</il>
+</ul>
+
+
+
+
 <li><b>point.cpp:</b> </li>
  <ul>
 <li><b>Scop</b>: În point.cpp, nu este nevoie de cod suplimentar, deoarece structura Point a fost deja definită în fișierul header point.hpp, iar constructorii implicați sunt automat generați de compilator pentru structura respectivă.</li>
