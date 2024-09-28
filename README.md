@@ -62,6 +62,17 @@ Gestionează desenarea tablei și a elementelor din interior (șarpele, merele, 
 
 
 
+<li><b>board.cpp:</b> </li>
+           <ul>
+<li><b>Constructorul Board(int w, int h)</b>:  Inițializează lățimea și înălțimea tablei de joc. Parametrii w și h specifică dimensiunile tablei de joc.
+</ul>
+<ul>
+<li><b>Funcția GetWidth()</b>:Returnează lățimea tablei de joc, care este utilă pentru a stabili limitele în care șarpele se poate deplasa.</il>
+<li><b>Funcția GetHeight()</b>: Returnează înălțimea tablei de joc, asigurându-se că șarpele nu poate depăși marginile superioare și inferioare ale tablei.</il>
+</ul>
+
+
+
 
 <li><b>snake.cpp:</b> </li>
            <ul>
