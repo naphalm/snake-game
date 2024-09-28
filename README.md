@@ -62,9 +62,26 @@ Gestionează desenarea tablei și a elementelor din interior (șarpele, merele, 
 
 
 
+<li><b>.gitignore:</b> </li>
+           <ul>
+<li><b>CXX:</b>: definește compilatorul folosit, în acest caz g++.</li>
+</ul>
+<ul>
+<li><b>CXXFLAGS:</b>: definește opțiunile de compilare, cum ar fi -Wall (pentru a afișa toate avertismentele) și -std=c++17 (pentru a folosi standardul C++17).</il>
+<li><b>EXEC:</b>: numele fișierului executabil rezultat.</il>
+<li><b>SRC:</b>: fișierele sursă .cpp care trebuie compilate. Trebuie să adăugați un fișier main.cpp, care va conține punctul de intrare (funcția main).</il>
+<li><b>OBJ:</b>: fișierele obiect rezultate din compilarea fișierelor sursă.</il>
+<li><b>all:</b>: regula implicită care creează programul final prin legarea fișierelor obiect.</il>
+<li><b>Grow</b>: Crește lungimea șarpelui adăugând un segment suplimentar la coadă, copiat din ultima poziție cunoscută a cozii.</il>
+<li><b>clean:</b>: o regulă pentru a șterge fișierele obiect și executabilul.</il>
+</ul>
+
+
+
+
 <li><b>board.cpp:</b> </li>
            <ul>
-<li><b>Constructorul Board(int w, int h)</b>:  Inițializează lățimea și înălțimea tablei de joc. Parametrii w și h specifică dimensiunile tablei de joc.
+<li><b>Constructorul Board(int w, int h)</b>:  Inițializează lățimea și înălțimea tablei de joc. Parametrii w și h specifică dimensiunile tablei de joc.</li>
 </ul>
 <ul>
 <li><b>Funcția GetWidth()</b>:Returnează lățimea tablei de joc, care este utilă pentru a stabili limitele în care șarpele se poate deplasa.</il>
@@ -76,7 +93,7 @@ Gestionează desenarea tablei și a elementelor din interior (șarpele, merele, 
 
 <li><b>snake.cpp:</b> </li>
            <ul>
-<li><b>Constructorul Snake()</b>: Inițializează șarpele la poziția de start (10, 10) și setează lungimea inițială a șarpelui la 1 segment.
+<li><b>Constructorul Snake()</b>: Inițializează șarpele la poziția de start (10, 10) și setează lungimea inițială a șarpelui la 1 segment.</li>
 </ul>
 <ul>
 <li><b>Funcția Move()</b>: Mută șarpele într-o direcție specificată. Mai întâi, fiecare segment preia poziția segmentului din fața sa, apoi capul șarpelui se mișcă în direcția dată de parametrul direction (care este un punct cu valori x și y).</il>
