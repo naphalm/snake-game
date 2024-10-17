@@ -115,6 +115,7 @@ SnakeGame este o implementare clasică a jocului retro "Snake", în care jucăto
 
 
 
+
 <li><b>.gitignore:</b> </li>
            <ul>
 <li><b>CXX:</b>: definește compilatorul folosit, în acest caz g++.</li>
@@ -127,6 +128,7 @@ SnakeGame este o implementare clasică a jocului retro "Snake", în care jucăto
 <li><b>all:</b>: regula implicită care creează programul final prin legarea fișierelor obiect.</il>
 <li><b>Grow</b>: Crește lungimea șarpelui adăugând un segment suplimentar la coadă, copiat din ultima poziție cunoscută a cozii.</il>
 <li><b>clean:</b>: o regulă pentru a șterge fișierele obiect și executabilul.</il>
+       
 </ul>
 
 
