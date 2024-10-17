@@ -104,24 +104,21 @@ Gestionează desenarea tablei și a elementelor din interior (șarpele, merele, 
 
 
 <li><b>point.hpp:</b> </li>
-
-           <ul>
-                  
-<li><b>Structura Point :</b> 
+     <ul>     
+<b>Structura Point :</b> 
      <li>  Reprezintă o structură care conține două coordonate întregi: x și y, folosită pentru a reprezenta un punct în plan bidimensional.</li>
 </ul>
 <ul>
      
-<li><b>Constructori:</b>
-       <ol>
+<b>Constructori:</b>
        <li>Point(int _x = 0, int _y = 0) - Constructor implicit care inițializează punctul la valorile (0, 0) sau la valorile date de parametrii _x și _y.</il>
      <li>  Point(const Point& other) - Constructor de copiere care inițializează un punct prin copierea valorilor unui alt punct</il>
-</ol>
-<li><b>Operatori:</b> 
+
+<b>Operatori:</b> 
        <li>operator= - Suprascrie operatorul de atribuire (=) pentru a copia valorile de la un alt obiect Point.</il>
        <li>  operator== - Suprascrie operatorul de comparație (==) pentru a verifica dacă două puncte sunt egale (au aceleași valori ale coordonatelor x și y).</il>
           
-<li><b>Operatori de intrare și ieșire:</b>
+<b>Operatori de intrare și ieșire:</b>
        <li>operator>> - Suprascrie operatorul de citire din flux (>>) pentru a citi valorile coordonatelor x și y dintr-un flux de intrare (cum ar fi un fișier sau tastatura).</il>
        <li> operator<< - Suprascrie operatorul de afișare în flux (<<) pentru a afișa coordonatele unui punct într-un flux de ieșire (cum ar fi consola).</il>
            
