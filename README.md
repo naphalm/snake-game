@@ -103,6 +103,7 @@ Gestionează desenarea tablei și a elementelor din interior (șarpele, merele, 
 
 
 
+
 <li><b>point.hpp:</b> </li>
      <ul>     
             
@@ -123,6 +124,136 @@ Gestionează desenarea tablei și a elementelor din interior (șarpele, merele, 
        <li>operator>> - Suprascrie operatorul de citire din flux (>>) pentru a citi valorile coordonatelor x și y dintr-un flux de intrare (cum ar fi un fișier sau tastatura).</il>
        <li> operator<< - Suprascrie operatorul de afișare în flux (<<) pentru a afișa coordonatele unui punct într-un flux de ieșire (cum ar fi consola).</il>
            
+</ul>
+
+
+
+
+
+<li><b>point.cpp:</b> </li>
+     <ul>     
+            
+<b>Constructori:</b>
+       <li>Point(int _x, int _y) - Inițializează obiectul Point cu valorile primite pentru coordonatele x și y.</il>
+     <li>  Point(const Point& other) - Copiază valorile coordonatelor x și y dintr-un alt obiect Point.</il>
+</ul>
+<ul>
+     
+<b>Operatori:</b>
+       <li>operator= - Copiază valorile coordonatelor dintr-un alt obiect Point. Returnează referința la obiectul curent pentru a permite atribuirea în lanț (e.g., p1 = p2 = p3).</il>
+     <li>  operator== - Compară coordonatele x și y ale obiectului curent cu cele ale unui alt punct. Returnează true dacă ambele coordonate sunt egale.</il>
+
+<b>Operatori de flux:</b> 
+       <li>operator>> - Permite citirea coordonatelor unui punct dintr-un flux de intrare, atribuind valorile respective obiectului Point.</il>
+       <li>  operator<< - Afișează coordonatele unui punct într-un flux de ieșire.</il>       
+</ul>
+
+
+
+
+
+<li><b>board.hpp:</b> </li>
+     <ul>     
+            
+<b>Clasa Board:</b>
+       <li>Reprezintă o tablă de joc cu două dimensiuni, width (lățime) și height (înălțime).</il>
+</ul>
+<ul>
+     
+<b>Constructori:</b>
+       <li>Board(int width = 20, int height = 20) - Inițializează obiectul cu lățimea și înălțimea specificată sau cu valorile implicite (20x20).</il>
+     <li> Board(const Board& other) - Constructor de copiere, copiază dimensiunile unui alt obiect Board.</il>
+
+<b>Metode:</b> 
+       <li>GetWidth() - Returnează lățimea tabloului.</il>
+       <li> GetHeight() - Returnează înălțimea tabloului.</il>     
+
+ <b>Operatori:</b> 
+        <li>operator= - Suprascrie operatorul de atribuire pentru a copia dimensiunile unui alt obiect Board.</il>
+       <li> operator== - Compară dimensiunile a două obiecte Board pentru a verifica dacă sunt egale.</il>  
+       
+<b>Operatori de flux:</b> 
+        <li>operator>> - Citirea lățimii și înălțimii tabloului dintr-un flux de intrare.</il>
+       <li> operator<< - Afișarea lățimii și înălțimii tabloului într-un flux de ieșire.</il>    
+</ul>
+
+
+
+
+
+<li><b>board.cpp:</b> </li>
+     <ul>     
+            
+<b>Constructori:</b>
+       <li>Board(int width, int height) - Inițializează obiectul Board cu valorile primite pentru lățime și înălțime.</il>
+     <li>  Board(const Board& other) - Copiază dimensiunile unui alt obiect Board.</li>
+</ul>
+<ul>
+     
+<b>Metode:</b>
+       <li>GetWidth() - Returnează lățimea tabloului.</il>
+     <li> GetHeight() - Returnează înălțimea tabloului.</il>
+
+<b>Operatori:</b> 
+       <li>operator= - Copiază lățimea și înălțimea unui alt obiect Board. Returnează referința la obiectul curent pentru a permite atribuirea în lanț.</il>
+       <li> operator== - Compară lățimea și înălțimea a două obiecte Board. Returnează true dacă dimensiunile sunt egale.</il>     
+
+ <b>Operatori de flux:</b> 
+        <li>operator>> - Citirea dimensiunilor tabloului dintr-un flux de intrare.</il>
+       <li> operator<< - Afișarea dimensiunilor tabloului într-un flux de ieșire.</il>      
+</ul>
+
+
+
+
+
+<li>abstract_painter.hpp:</b> </li>
+           <ul>
+<b>Clasa AbstractPainter:</b> 
+       <li>Este o clasă abstractă care definește interfața pentru clasele care vor fi utilizate pentru desenarea imaginii și scrierea textului.</li>
+</ul>
+
+
+
+
+
+<li>painter.hpp:</b> </li>
+           <ul>
+<b>Clasa Painter:</b> 
+       <li>Moștenește clasa AbstractPainter și implementează funcționalitățile de desenare a imaginii și scrierea textului.</li>
+<b>Metode:</b> 
+       <li>DrawImage(Point topLeft, Point bottomRight, char** image) - Desenează o imagine definită de un tablou bidimensional image între punctele topLeft și bottomRight.</li>
+        <li>WriteText(Point position, char* text) - Afișează textul în poziția specificată de Point.</li>
+</ul>
+
+
+
+
+
+<li>painter.cpp:</b> </li>
+           <ul>
+<b>Metoda DrawImage:</b> 
+       <li>Primește două puncte, topLeft (colțul stânga-sus) și bottomRight (colțul dreapta-jos), precum și un tablou bidimensional de caractere care reprezintă imaginea. Afișează în consola coordonatele imaginii.</li>
+<b>Metoda WriteText:</b> 
+       <li>Primește un punct și un text. Afișează textul la coordonatele specificate de punctul position.</li>
+</ul>
+
+
+
+
+
+<li>Makefile:</b> </li>
+           <ul>
+<b>CXX și CXXFLAGS:</b> 
+       <li>CXX = g++ definește compilatorul utilizat.</li>
+        <li> CXXFLAGS = -Wall -Wextra -std=c++17 specifică opțiunile de compilare, inclusiv afișarea avertismentelor și utilizarea standardului C++17.</li>
+<b>SRC și OBJ:</b> 
+       <li>SRC = point.cpp board.cpp painter.cpp definește fișierele sursă din proiect. </li>        
+       <li>OBJ = $(SRC:.cpp=.o) generează numele fișierelor obiect..</li>
+ <b>all:</b>     
+     <li>Regula implicită care compilează proiectul.</li>     
+ <b>clean:</b>     
+     <li>Regula pentru ștergerea fișierelor obiect și executabilului.</li>                 
 </ul>
 
 
