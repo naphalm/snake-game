@@ -1,24 +1,22 @@
 #pragma once
 
+#include <iostream>
+
 class Board {
-    int width;
-    int height;
+    int _width;
+    int _height;
 
 public:
-    Board(int w, int h); 
+    Board(int width = 20, int height = 20);  
+    Board(const Board& other);               
+
     int GetWidth() const; 
     int GetHeight() const; 
+
+    Board operator=(const Board& other);     
+    bool operator==(const Board& other) const;  
+
+    friend std::istream& operator>>(std::istream& in, Board& board); 
+    friend std::ostream& operator<<(std::ostream& out, const Board& board);  
 };
 
-
-Board::Board(int w, int h) : width(w), height(h) {}
-
-
-int Board::GetWidth() const {
-    return width;
-}
-
-
-int Board::GetHeight() const {
-    return height;
-}
