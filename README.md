@@ -10,57 +10,107 @@ SnakeGame este o implementare clasică a jocului retro "Snake", în care jucăto
  <li><b>Regulile jocului Snake</b>:Snake este un joc clasic în care jucătorul controlează un șarpe într-un spațiu limitat. Scopul jocului este ca șarpele să mănânce "mere" (sau alte obiecte) care apar în mod aleatoriu pe tablă. Cu fiecare măr mâncat, șarpele crește în lungime, iar jocul devine mai dificil deoarece șarpele nu trebuie să se lovească de pereți sau să se auto-colizioneze. Jocul continuă până când jucătorul face o greșeală, moment în care șarpele moare. </li>
 
  </ol>
-<b>Funcția fișierelor board.hpp, snake.hpp, și point.hpp</b>:
+<b>Funcția fișierelor board.hpp, board.cpp, snake.cpp, snake.hpp, point.hpp, point.cpp, .gitignore, MakeFile, abstract_painter.hpp, painter.cpp, si painter.hpp</b>:
 <body >
-    <ol>
- <li><b>point.hpp</b>: </li>
-           <ul>
-<li><b> Scop</b>: Definește o structură de bază, Point, care reprezintă un punct în spațiu, cu coordonate x și y.Reprezintă locația pe tablă a șarpelui, a mărului sau a oricărui alt obiect.
-Este folosit pentru a stoca poziții și pentru a gestiona mișcarea șarpelui în funcție de coordonate.</il>
-           </ul>
-            <ul>
-<li> <b>Structura Point</b>: Această structură reprezintă o pereche de coordonate (x, y), folosite pentru a specifica poziția în spațiul bidimensional al tablei de joc.</il>
-<li><b>Constructor implicit</b>: Inițializează coordonatele x și y la valoarea 0.</il>
-<li><b>Constructor cu parametri</b>: Permite inițializarea unui punct cu valori specifice pentru x și y.</il>
-</ul>
-
-           
-
-          
+    <ol>       
 <li><b>snake.hpp:</b> </li>
-           <ul>
-<li><b>Scop</b>: Reprezintă șarpele și comportamentul său.Stochează segmentul șarpelui într-un array de tip Point, fiecare element reprezentând o parte din corpul șarpelui.
-Gestionează mișcarea șarpelui, creșterea acestuia atunci când mănâncă un măr și detectarea coliziunilor.
+     <ul>     
+            
+<b>Clasa Snake:</b> 
+     <li>  Reprezintă o structură care conține două coordonate întregi: x și y, folosită pentru a reprezenta un punct în plan bidimensional.</li>
 </ul>
 <ul>
-<li><b>Clasa Snake</b>: Această clasă gestionează comportamentul șarpelui în joc, incluzând poziția segmentelor și mișcarea.</il>
-<li><b>segments[100]</b>: Un array de 100 de segmente, fiecare reprezentat printr-un Point. Segmentele definesc pozițiile pe care le ocupă șarpele pe tablă.</il>
-<li><b>length</b>: Reține lungimea actuală a șarpelui, adică numărul de segmente active.</il>
-<li><b>Constructorul Snake</b>: Inițializează șarpele cu un singur segment plasat la o poziție fixă (de exemplu, coordonatele (10, 10)).</il>
-<li><b>Move(Point direction)</b>: Mișcă șarpele într-o direcție specificată (ex.: stânga, dreapta, sus, jos) prin actualizarea poziției fiecărui segment, astfel încât capul șarpelui să fie mutat în direcția indicată, iar celelalte segmente să urmeze.</il>
-<li><b>Grow</b>: Crește lungimea șarpelui adăugând un segment suplimentar la coadă, copiat din ultima poziție cunoscută a cozii.</il>
-<li><b>GetHeadPosition</b>: Returnează poziția capului șarpelui (segmentul de la indexul 0 din array-ul segments).</il>
+     
+<b>Atribute:</b>
+       <li>Point segments[100] - Reprezintă segmentele corpului șarpelui, fiecare fiind un obiect Point cu coordonatele x și y.</il>
+     <li> int length - Reprezintă lungimea curentă a șarpelui, adică câte segmente are acesta</il>
+
+<b>Constructor:</b> 
+       <li>Snake() - Constructor implicit care inițializează șarpele cu lungimea de 1 și poziționează primul segment la coordonatele (10, 10).</il>
+          
+<b>Metode:</b>
+       <li>void Move(Point direction) - Metodă pentru mutarea șarpelui. Fiecare segment preia poziția segmentului anterior, iar primul segment (capul) se deplasează într-o anumită direcție specificată de un obiect Point.</il>
+       <li> void Grow() - Metodă pentru creșterea șarpelui. Adaugă un segment nou la finalul șarpelui, dacă lungimea este mai mică de 100.</il>
+        <li> Point GetHeadPosition() const - Metodă care returnează poziția capului șarpelui (primul segment) sub formă de obiect Point.</il>
+           
 </ul>
 
 
 
 
 
- <li><b>board.hpp:</b> </li>
- <ul>
-<li><b>Scop</b>: Reprezintă tabla de joc (zona în care se mișcă șarpele și apar merele).Stochează dimensiunea tablei de joc (lățime și înălțime).
-Gestionează desenarea tablei și a elementelor din interior (șarpele, merele, etc.).</li>
- </ul>
- <ul>
-<li> <b>Clasa Board</b>: Reprezintă tabla de joc pe care se desfășoară acțiunea jocului.</li>
-<li><b>width și height</b>: Variabile care definesc dimensiunile tablei (lățime și înălțime).</li>
-<li><b>Constructorul Board</b>: Inițializează tabla de joc cu dimensiunile specificate (de exemplu, o tablă de 20x20 sau alte dimensiuni definite de utilizator).</li>
-<li><b>GetWidth</b>: Returnează lățimea tablei, util pentru a stabili limitele mișcării șarpelui.</li>
-<li><b>GetHeight</b>: Returnează înălțimea tablei, similar cu lățimea, folosit pentru a verifica limitele superioare și inferioare ale tablei.</li>
+<li><b>snake.cpp:</b> </li>
+     <ul>     
+            
+<b>Constructorul Snake:</b> 
+     <li>  Inițializează lungimea șarpelui la 1 și setează poziția primului segment (capul) la coordonatele (10, 10).</li>
+</ul>
+<ul>
+     
+<b>Metoda Move.Pentru mutarea șarpelui, metoda face următoarele:</b>
+       <li>Actualizează fiecare segment, mutându-l la poziția segmentului anterior (de la coadă spre cap).</il>
+     <li>Modifică coordonatele capului (primul segment) conform direcției primite ca parametru, adăugând valorile lui x și y din obiectul Point corespunzător direcției.</il>
+
+<b>Metoda Grow:</b> 
+       <li>Dacă lungimea șarpelui este mai mică de 100, adaugă un nou segment la finalul șarpelui, cu aceeași poziție ca ultimul segment existent (în esență, lărgirea șarpelui fără mișcarea lui imediată).</il>
+          
+<b>Metoda GetHeadPosition:</b>
+       <li>Returnează poziția capului șarpelui (primul segment) ca un obiect Point.</il>
 </ul>
 
 
 
+
+
+<li><b>painter.hpp și painter.cpp:</b> </li>
+     <ul>     
+            
+<b>Clasa Painter:</b> 
+     <li>  Moștenește clasa AbstractPainter și implementează funcționalitatea pentru desenarea imaginilor și afișarea textului.</li>
+</ul>
+<ul>
+     
+<b>Metodele Painter:</b>
+       <li>void DrawImage(Point topLeft, Point bottomRight, char** image):Desenează o imagine între punctele topLeft (stânga-sus) și bottomRight (dreapta-jos). Imaginea este reprezentată de un tablou bidimensional de caractere.</il>
+     <li>void WriteText(Point position, char* text):Afișează un text la coordonatele specificate de obiectul Point position.</il>
+</ul>
+
+
+
+
+
+<li><b>abstract_painter.hpp:</b> </li>
+     <ul>     
+            
+<b>Clasa AbstractPainter:</b> 
+     <li>  Este o clasă abstractă ce definește interfața pentru clasele care vor implementa funcționalități de desenare și scriere.</li>
+</ul>
+<ul>
+     
+<b>Metode abstracte (pure virtuale):</b>
+       <li>virtual void DrawImage(Point topLeft, Point bottomRight, char** image) = 0 - O metodă care va fi implementată de clasele derivate, responsabilă pentru desenarea unei imagini într-o regiune definită de punctele topLeft și bottomRight.</il>
+     <li>virtual void WriteText(Point position, char* text) = 0 - O metodă care va fi implementată pentru a scrie un text la coordonatele specificate de position.</il>
+     <li>Aceasta este o interfață care obligă orice clasă derivată să implementeze aceste două metode.</li>
+</ul>
+
+
+
+
+
+<li><b>abstract_painter.hpp:</b> </li>
+     <ul>     
+            
+<b>Clasa AbstractPainter:</b> 
+     <li>  Este o clasă abstractă ce definește interfața pentru clasele care vor implementa funcționalități de desenare și scriere.</li>
+</ul>
+<ul>
+     
+<b>Metode abstracte (pure virtuale):</b>
+       <li>virtual void DrawImage(Point topLeft, Point bottomRight, char** image) = 0 - O metodă care va fi implementată de clasele derivate, responsabilă pentru desenarea unei imagini într-o regiune definită de punctele topLeft și bottomRight.</il>
+     <li>virtual void WriteText(Point position, char* text) = 0 - O metodă care va fi implementată pentru a scrie un text la coordonatele specificate de position.</il>
+     <li>Aceasta este o interfață care obligă orice clasă derivată să implementeze aceste două metode.</li>
+
+</ul>
 
 <li><b>.gitignore:</b> </li>
            <ul>
@@ -74,31 +124,6 @@ Gestionează desenarea tablei și a elementelor din interior (șarpele, merele, 
 <li><b>all:</b>: regula implicită care creează programul final prin legarea fișierelor obiect.</il>
 <li><b>Grow</b>: Crește lungimea șarpelui adăugând un segment suplimentar la coadă, copiat din ultima poziție cunoscută a cozii.</il>
 <li><b>clean:</b>: o regulă pentru a șterge fișierele obiect și executabilul.</il>
-</ul>
-
-
-
-
-<li><b>board.cpp:</b> </li>
-           <ul>
-<li><b>Constructorul Board(int w, int h)</b>:  Inițializează lățimea și înălțimea tablei de joc. Parametrii w și h specifică dimensiunile tablei de joc.</li>
-</ul>
-<ul>
-<li><b>Funcția GetWidth()</b>:Returnează lățimea tablei de joc, care este utilă pentru a stabili limitele în care șarpele se poate deplasa.</il>
-<li><b>Funcția GetHeight()</b>: Returnează înălțimea tablei de joc, asigurându-se că șarpele nu poate depăși marginile superioare și inferioare ale tablei.</il>
-</ul>
-
-
-
-
-<li><b>snake.cpp:</b> </li>
-           <ul>
-<li><b>Constructorul Snake()</b>: Inițializează șarpele la poziția de start (10, 10) și setează lungimea inițială a șarpelui la 1 segment.</li>
-</ul>
-<ul>
-<li><b>Funcția Move()</b>: Mută șarpele într-o direcție specificată. Mai întâi, fiecare segment preia poziția segmentului din fața sa, apoi capul șarpelui se mișcă în direcția dată de parametrul direction (care este un punct cu valori x și y).</il>
-<li><b>Funcția Grow()</b>: Adaugă un nou segment la șarpe, crescând lungimea acestuia. Noul segment va avea aceeași poziție ca ultimul segment din coadă. Aceasta permite creșterea șarpelui după ce mănâncă un măr.</il>
-<li><b>Funcția GetHeadPosition()</b>: Returnează poziția capului șarpelui, folosind primul segment din array-ul de segmente.</il>
 </ul>
 
 
@@ -263,17 +288,6 @@ Gestionează desenarea tablei și a elementelor din interior (șarpele, merele, 
      
  <b>clean:</b>     
      <li>Regula pentru ștergerea fișierelor obiect și executabilului.</li>                 
-</ul>
-
-
-
-
-<li><b>point.cpp:</b> </li>
- <ul>
-<li><b>Scop</b>: În point.cpp, nu este nevoie de cod suplimentar, deoarece structura Point a fost deja definită în fișierul header point.hpp, iar constructorii implicați sunt automat generați de compilator pentru structura respectivă.</li>
- </ul>
- <ul>
-<li> <b>Structura</b>:Point are doi membri: x și y, care reprezintă coordonatele unui punct pe tabla de joc.</li>
 </ul>
 </ol>
 </body>
