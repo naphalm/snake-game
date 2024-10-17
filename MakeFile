@@ -1,16 +1,13 @@
 
+
 CXX = g++
-
-
 CXXFLAGS = -Wall -Wextra -std=c++17
 
 
-EXEC = snake_game
+EXEC = game
 
 
-SRC = point.cpp snake.cpp board.cpp main.cpp
-
-
+SRC = point.cpp board.cpp painter.cpp
 OBJ = $(SRC:.cpp=.o)
 
 
@@ -27,3 +24,4 @@ $(EXEC): $(OBJ)
 
 clean:
 	rm -f $(OBJ) $(EXEC)
+
