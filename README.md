@@ -10,7 +10,7 @@ SnakeGame este o implementare clasică a jocului retro "Snake", în care jucăto
  <li><b>Regulile jocului Snake</b>:Snake este un joc clasic în care jucătorul controlează un șarpe într-un spațiu limitat. Scopul jocului este ca șarpele să mănânce "mere" (sau alte obiecte) care apar în mod aleatoriu pe tablă. Cu fiecare măr mâncat, șarpele crește în lungime, iar jocul devine mai dificil deoarece șarpele nu trebuie să se lovească de pereți sau să se auto-colizioneze. Jocul continuă până când jucătorul face o greșeală, moment în care șarpele moare. </li>
 
  </ol>
-<b>Funcția fișierelor board.hpp, snake.hpp, și point.hpp</b>:
+<b>Funcția fișierelor board.hpp, board.cpp, snake.hpp, snake.cpp, point.hpp, point.cpp, MakeFile, si .gitignore</b>:
 <body >
     <ol>
  <li><b>point.hpp</b>: </li>
