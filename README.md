@@ -112,6 +112,9 @@ SnakeGame este o implementare clasică a jocului retro "Snake", în care jucăto
 
 </ul>
 
+
+
+
 <li><b>.gitignore:</b> </li>
            <ul>
 <li><b>CXX:</b>: definește compilatorul folosit, în acest caz g++.</li>
