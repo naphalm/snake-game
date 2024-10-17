@@ -105,7 +105,8 @@ Gestionează desenarea tablei și a elementelor din interior (șarpele, merele, 
 
 <li><b>point.hpp:</b> </li>
      <ul>     
-<b>Structura Point :</b> 
+            
+<b>Structura Point:</b> 
      <li>  Reprezintă o structură care conține două coordonate întregi: x și y, folosită pentru a reprezenta un punct în plan bidimensional.</li>
 </ul>
 <ul>
