@@ -209,6 +209,7 @@ Gestionează desenarea tablei și a elementelor din interior (șarpele, merele, 
 
 <li>abstract_painter.hpp:</b> </li>
            <ul>
+                  
 <b>Clasa AbstractPainter:</b> 
        <li>Este o clasă abstractă care definește interfața pentru clasele care vor fi utilizate pentru desenarea imaginii și scrierea textului.</li>
 </ul>
@@ -219,8 +220,10 @@ Gestionează desenarea tablei și a elementelor din interior (șarpele, merele, 
 
 <li>painter.hpp:</b> </li>
            <ul>
+                  
 <b>Clasa Painter:</b> 
        <li>Moștenește clasa AbstractPainter și implementează funcționalitățile de desenare a imaginii și scrierea textului.</li>
+       
 <b>Metode:</b> 
        <li>DrawImage(Point topLeft, Point bottomRight, char** image) - Desenează o imagine definită de un tablou bidimensional image între punctele topLeft și bottomRight.</li>
         <li>WriteText(Point position, char* text) - Afișează textul în poziția specificată de Point.</li>
@@ -232,8 +235,10 @@ Gestionează desenarea tablei și a elementelor din interior (șarpele, merele, 
 
 <li>painter.cpp:</b> </li>
            <ul>
+                  
 <b>Metoda DrawImage:</b> 
        <li>Primește două puncte, topLeft (colțul stânga-sus) și bottomRight (colțul dreapta-jos), precum și un tablou bidimensional de caractere care reprezintă imaginea. Afișează în consola coordonatele imaginii.</li>
+                  
 <b>Metoda WriteText:</b> 
        <li>Primește un punct și un text. Afișează textul la coordonatele specificate de punctul position.</li>
 </ul>
@@ -244,14 +249,18 @@ Gestionează desenarea tablei și a elementelor din interior (șarpele, merele, 
 
 <li>Makefile:</b> </li>
            <ul>
+                  
 <b>CXX și CXXFLAGS:</b> 
        <li>CXX = g++ definește compilatorul utilizat.</li>
         <li> CXXFLAGS = -Wall -Wextra -std=c++17 specifică opțiunile de compilare, inclusiv afișarea avertismentelor și utilizarea standardului C++17.</li>
+        
 <b>SRC și OBJ:</b> 
        <li>SRC = point.cpp board.cpp painter.cpp definește fișierele sursă din proiect. </li>        
        <li>OBJ = $(SRC:.cpp=.o) generează numele fișierelor obiect..</li>
+       
  <b>all:</b>     
-     <li>Regula implicită care compilează proiectul.</li>     
+     <li>Regula implicită care compilează proiectul.</li>    
+     
  <b>clean:</b>     
      <li>Regula pentru ștergerea fișierelor obiect și executabilului.</li>                 
 </ul>
