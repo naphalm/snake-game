@@ -61,42 +61,6 @@ SnakeGame este o implementare clasică a jocului retro "Snake", în care jucăto
 
 
 
-
-<li><b>painter.hpp și painter.cpp:</b> </li>
-     <ul>     
-            
-<b>Clasa Painter:</b> 
-     <li>  Moștenește clasa AbstractPainter și implementează funcționalitatea pentru desenarea imaginilor și afișarea textului.</li>
-</ul>
-<ul>
-     
-<b>Metodele Painter:</b>
-       <li>void DrawImage(Point topLeft, Point bottomRight, char** image):Desenează o imagine între punctele topLeft (stânga-sus) și bottomRight (dreapta-jos). Imaginea este reprezentată de un tablou bidimensional de caractere.</il>
-     <li>void WriteText(Point position, char* text):Afișează un text la coordonatele specificate de obiectul Point position.</il>
-</ul>
-
-
-
-
-
-<li><b>abstract_painter.hpp:</b> </li>
-     <ul>     
-            
-<b>Clasa AbstractPainter:</b> 
-     <li>  Este o clasă abstractă ce definește interfața pentru clasele care vor implementa funcționalități de desenare și scriere.</li>
-</ul>
-<ul>
-     
-<b>Metode abstracte (pure virtuale):</b>
-       <li>virtual void DrawImage(Point topLeft, Point bottomRight, char** image) = 0 - O metodă care va fi implementată de clasele derivate, responsabilă pentru desenarea unei imagini într-o regiune definită de punctele topLeft și bottomRight.</il>
-     <li>virtual void WriteText(Point position, char* text) = 0 - O metodă care va fi implementată pentru a scrie un text la coordonatele specificate de position.</il>
-     <li>Aceasta este o interfață care obligă orice clasă derivată să implementeze aceste două metode.</li>
-</ul>
-
-
-
-
-
 <li><b>abstract_painter.hpp:</b> </li>
      <ul>     
             
@@ -236,13 +200,6 @@ SnakeGame este o implementare clasică a jocului retro "Snake", în care jucăto
 
 
 
-
-<li>abstract_painter.hpp:</b> </li>
-           <ul>
-                  
-<b>Clasa AbstractPainter:</b> 
-       <li>Este o clasă abstractă care definește interfața pentru clasele care vor fi utilizate pentru desenarea imaginii și scrierea textului.</li>
-</ul>
 
 
 
