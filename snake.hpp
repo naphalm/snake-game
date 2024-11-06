@@ -4,7 +4,7 @@
 #include <memory>
 
 class Snake {
-    std::vector<Point> segments; // Folosim vector pentru a stoca segmentele
+    std::vector<Point> segments; 
     int length;
 
 public:
