@@ -205,7 +205,7 @@ SnakeGame este o implementare clasică a jocului retro "Snake", în care jucăto
 
 
 
-<li>painter.hpp:</b> </li>
+<li><b>painter.hpp:</b> </li>
            <ul>
                   
 <b>Clasa Painter:</b> 
@@ -220,7 +220,7 @@ SnakeGame este o implementare clasică a jocului retro "Snake", în care jucăto
 
 
 
-<li>painter.cpp:</b> </li>
+<li><b>painter.cpp:</b> </li>
            <ul>
                   
 <b>Metoda DrawImage:</b> 
@@ -234,7 +234,7 @@ SnakeGame este o implementare clasică a jocului retro "Snake", în care jucăto
 
 
 
-<li>Makefile:</b> </li>
+<li><b>Makefile:</b> </li>
            <ul>
                   
 <b>CXX și CXXFLAGS:</b> 
