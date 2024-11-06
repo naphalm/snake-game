@@ -13,49 +13,24 @@ SnakeGame este o implementare clasică a jocului retro "Snake", în care jucăto
 <b>Funcția fișierelor board.hpp, board.cpp, snake.cpp, snake.hpp, point.hpp, point.cpp, .gitignore, MakeFile, abstract_painter.hpp, painter.cpp, si painter.hpp</b>:
 <body >
     <ol>       
-<li><b>snake.hpp:</b> </li>
+
+
+
+
+
+
+<li><b>snake.cpp și snake.hpp:</b> </li>
      <ul>     
             
-<b>Clasa Snake:</b> 
-     <li>  Reprezintă o structură care conține două coordonate întregi: x și y, folosită pentru a reprezenta un punct în plan bidimensional.</li>
+<b>Modificări aduse:</b> 
+     <li>  În locul array-ului static de Point, acum folosim un container STL std::vector pentru a stoca segmentele șarpelui. Acest lucru face codul mai flexibil, permițând extinderea automată a vectorului atunci când șarpele crește.</li>
+     <li>Am înlocuit pointerii și alocările dinamice de memorie cu referințe și STL, eliminând necesitatea unui management manual al memoriei.</il>
+     <li>std::vector permite manipularea ușoară a segmentelor folosind algoritmi STL pentru căutare și manipulare.</il>
 </ul>
 <ul>
      
-<b>Atribute:</b>
-       <li>Point segments[100] - Reprezintă segmentele corpului șarpelui, fiecare fiind un obiect Point cu coordonatele x și y.</il>
-     <li> int length - Reprezintă lungimea curentă a șarpelui, adică câte segmente are acesta</il>
-
-<b>Constructor:</b> 
-       <li>Snake() - Constructor implicit care inițializează șarpele cu lungimea de 1 și poziționează primul segment la coordonatele (10, 10).</il>
-          
-<b>Metode:</b>
-       <li>void Move(Point direction) - Metodă pentru mutarea șarpelui. Fiecare segment preia poziția segmentului anterior, iar primul segment (capul) se deplasează într-o anumită direcție specificată de un obiect Point.</il>
-       <li> void Grow() - Metodă pentru creșterea șarpelui. Adaugă un segment nou la finalul șarpelui, dacă lungimea este mai mică de 100.</il>
-        <li> Point GetHeadPosition() const - Metodă care returnează poziția capului șarpelui (primul segment) sub formă de obiect Point.</il>
-           
-</ul>
-
-
-
-
-
-<li><b>snake.cpp:</b> </li>
-     <ul>     
-            
-<b>Constructorul Snake:</b> 
-     <li>  Inițializează lungimea șarpelui la 1 și setează poziția primului segment (capul) la coordonatele (10, 10).</li>
-</ul>
-<ul>
-     
-<b>Metoda Move.Pentru mutarea șarpelui, metoda face următoarele:</b>
-       <li>Actualizează fiecare segment, mutându-l la poziția segmentului anterior (de la coadă spre cap).</il>
-     <li>Modifică coordonatele capului (primul segment) conform direcției primite ca parametru, adăugând valorile lui x și y din obiectul Point corespunzător direcției.</il>
-
-<b>Metoda Grow:</b> 
-       <li>Dacă lungimea șarpelui este mai mică de 100, adaugă un nou segment la finalul șarpelui, cu aceeași poziție ca ultimul segment existent (în esență, lărgirea șarpelui fără mișcarea lui imediată).</il>
-          
-<b>Metoda GetHeadPosition:</b>
-       <li>Returnează poziția capului șarpelui (primul segment) ca un obiect Point.</il>
+<b>Descriere cod: </b>
+       <li>Clasa Snake reprezintă un șarpe cu o poziție și o direcție. Aceasta include metode pentru a muta (Move) și a crește (Grow) șarpele, precum și pentru a obține poziția capului (GetHeadPosition). Metodele folosesc referințe pentru parametri, asigurându-se că resursele sunt manipulate eficient.</il>
 </ul>
 
 
@@ -74,45 +49,6 @@ SnakeGame este o implementare clasică a jocului retro "Snake", în care jucăto
        <li>void DrawImage(Point topLeft, Point bottomRight, char** image):Desenează o imagine între punctele topLeft (stânga-sus) și bottomRight (dreapta-jos). Imaginea este reprezentată de un tablou bidimensional de caractere.</il>
      <li>void WriteText(Point position, char* text):Afișează un text la coordonatele specificate de obiectul Point position.</il>
 </ul>
-
-
-
-
-
-<li><b>abstract_painter.hpp:</b> </li>
-     <ul>     
-            
-<b>Clasa AbstractPainter:</b> 
-     <li>  Este o clasă abstractă ce definește interfața pentru clasele care vor implementa funcționalități de desenare și scriere.</li>
-</ul>
-<ul>
-     
-<b>Metode abstracte (pure virtuale):</b>
-       <li>virtual void DrawImage(Point topLeft, Point bottomRight, char** image) = 0 - O metodă care va fi implementată de clasele derivate, responsabilă pentru desenarea unei imagini într-o regiune definită de punctele topLeft și bottomRight.</il>
-     <li>virtual void WriteText(Point position, char* text) = 0 - O metodă care va fi implementată pentru a scrie un text la coordonatele specificate de position.</il>
-     <li>Aceasta este o interfață care obligă orice clasă derivată să implementeze aceste două metode.</li>
-</ul>
-
-
-
-
-
-<li><b>abstract_painter.hpp:</b> </li>
-     <ul>     
-            
-<b>Clasa AbstractPainter:</b> 
-     <li>  Este o clasă abstractă ce definește interfața pentru clasele care vor implementa funcționalități de desenare și scriere.</li>
-</ul>
-<ul>
-     
-<b>Metode abstracte (pure virtuale):</b>
-       <li>virtual void DrawImage(Point topLeft, Point bottomRight, char** image) = 0 - O metodă care va fi implementată de clasele derivate, responsabilă pentru desenarea unei imagini într-o regiune definită de punctele topLeft și bottomRight.</il>
-     <li>virtual void WriteText(Point position, char* text) = 0 - O metodă care va fi implementată pentru a scrie un text la coordonatele specificate de position.</il>
-     <li>Aceasta este o interfață care obligă orice clasă derivată să implementeze aceste două metode.</li>
-
-</ul>
-
-
 
 
 
@@ -237,62 +173,45 @@ SnakeGame este o implementare clasică a jocului retro "Snake", în care jucăto
 
 
 
-<li>abstract_painter.hpp:</b> </li>
+<li><b>abstract_painter.hpp:</b> </li>
            <ul>
                   
-<b>Clasa AbstractPainter:</b> 
-       <li>Este o clasă abstractă care definește interfața pentru clasele care vor fi utilizate pentru desenarea imaginii și scrierea textului.</li>
-</ul>
-
-
-
-
-
-<li>painter.hpp:</b> </li>
-           <ul>
-                  
-<b>Clasa Painter:</b> 
-       <li>Moștenește clasa AbstractPainter și implementează funcționalitățile de desenare a imaginii și scrierea textului.</li>
+<b>Modificări aduse:</b> 
+       <li>În interfața AbstractPainter, char* a fost înlocuit cu std::string, iar char** cu std::vector<std::string>, respectând noile convenții de utilizare a STL.</li>
        
-<b>Metode:</b> 
-       <li>DrawImage(Point topLeft, Point bottomRight, char** image) - Desenează o imagine definită de un tablou bidimensional image între punctele topLeft și bottomRight.</li>
-        <li>WriteText(Point position, char* text) - Afișează textul în poziția specificată de Point.</li>
-</ul>
-
-
-
-
-
-<li>painter.cpp:</b> </li>
-           <ul>
-                  
-<b>Metoda DrawImage:</b> 
-       <li>Primește două puncte, topLeft (colțul stânga-sus) și bottomRight (colțul dreapta-jos), precum și un tablou bidimensional de caractere care reprezintă imaginea. Afișează în consola coordonatele imaginii.</li>
-                  
-<b>Metoda WriteText:</b> 
-       <li>Primește un punct și un text. Afișează textul la coordonatele specificate de punctul position.</li>
-</ul>
-
-
-
-
-
-<li>Makefile:</b> </li>
-           <ul>
-                  
-<b>CXX și CXXFLAGS:</b> 
-       <li>CXX = g++ definește compilatorul utilizat.</li>
-        <li> CXXFLAGS = -Wall -Wextra -std=c++17 specifică opțiunile de compilare, inclusiv afișarea avertismentelor și utilizarea standardului C++17.</li>
+<b>Descriere cod:</b> 
+       <li>AbstractPainter definește o interfață abstractă pentru desenarea imaginii și textului. Clasele derivate, cum ar fi Painter, trebuie să implementeze aceste metode. Schimbarea către std::string și std::vector asigură compatibilitatea cu alte componente refăcute din joc.</li>
         
-<b>SRC și OBJ:</b> 
-       <li>SRC = point.cpp board.cpp painter.cpp definește fișierele sursă din proiect. </li>        
-       <li>OBJ = $(SRC:.cpp=.o) generează numele fișierelor obiect..</li>
+</ul>
+
+
+
+
+
+<li><b>painter.cpp și painter.hpp</b> </li>
+           <ul>
+                  
+<b>Modificări aduse:</b> 
+       <li>Am înlocuit char* pentru text cu std::string, permițând o manipulare mai sigură și mai convenabilă a șirurilor.</li>
+        <li>În metoda DrawImage, am înlocuit char** cu un std::vector<std::string>, făcându-l mai ușor de lucrat cu imagini și eliminând nevoia de management manual al memoriei pentru un array bidimensional de caractere.</li>
        
- <b>all:</b>     
-     <li>Regula implicită care compilează proiectul.</li>    
-     
- <b>clean:</b>     
-     <li>Regula pentru ștergerea fișierelor obiect și executabilului.</li>                 
+<b>Descriere cod:</b> 
+       <li>Clasa Painter este responsabilă pentru desenarea elementelor jocului și pentru afișarea textului pe tablă. DrawImage afișează coordonatele pentru marginea stângă-sus și dreapta-jos a imaginii, iar WriteText afișează textul la coordonatele date. std::vector<std::string> este folosit pentru imagini, asigurând ușurința și siguranța manipulării datelor.</li>
+ 
+</ul>
+
+
+
+
+<li><b>Makefile:</b> </li>
+           <ul>
+                  
+<b>Modificări aduse:</b> 
+        <li> Makefile este actualizat pentru a include fișierul snake.cpp și pentru a compila cu setările corespunzătoare pentru standardul C++17, necesar pentru utilizarea STL și smart pointers.</li>
+        
+<b>Descriere cod:</b> 
+       <li>MMakefile definește reguli pentru compilarea și generarea executabilului final. Comanda make all compilează și leagă toate fișierele sursă, iar comanda make clean șterge fișierele temporare .o și executabilul.</li>        
+                   
 </ul>
 </ol>
 </body>
