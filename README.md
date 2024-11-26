@@ -14,11 +14,6 @@ SnakeGame este o implementare clasică a jocului retro "Snake", în care jucăto
 <body >
     <ol>       
 
-
-
-
-
-
 <li><b>src/snake.cpp și include/snake.hpp</b> </li>
      <ul>     
             
