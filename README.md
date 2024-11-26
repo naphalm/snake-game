@@ -160,7 +160,7 @@ SnakeGame este o implementare clasică a jocului retro "Snake", în care jucăto
         <li> Curățarea (clean) șterge acum și fișierele .a și obiectele individuale. </li> 
 <b>Descriere cod:</b> 
        <li>Controlează procesul de construire a aplicației, compiland fiecare modul separat și integrându-le într-un executabil final.</li>        
-                   
+     </ol>              
 </ul>
-</ol>
+
 </body>
