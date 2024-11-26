@@ -29,7 +29,7 @@ SnakeGame este o implementare clasică a jocului retro "Snake", în care jucăto
 
 
 
-
+<ol> 
 <li><b>src/painter.cpp și include/painter.hpp:</b> </li>
      <ul>     
             
