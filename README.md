@@ -10,7 +10,7 @@ SnakeGame este o implementare clasică a jocului retro "Snake", în care jucăto
  <li><b>Regulile jocului Snake</b>:Snake este un joc clasic în care jucătorul controlează un șarpe într-un spațiu limitat. Scopul jocului este ca șarpele să mănânce "mere" (sau alte obiecte) care apar în mod aleatoriu pe tablă. Cu fiecare măr mâncat, șarpele crește în lungime, iar jocul devine mai dificil deoarece șarpele nu trebuie să se lovească de pereți sau să se auto-colizioneze. Jocul continuă până când jucătorul face o greșeală, moment în care șarpele moare. </li>
 
  </ol>
-<b>Funcția fișierelor board.hpp, board.cpp, snake.cpp, snake.hpp, point.hpp, point.cpp, .gitignore, MakeFile, abstract_painter.hpp, painter.cpp, si painter.hpp</b>:
+<b>Funcția fișierelor board.hpp, board.cpp, snake.cpp, snake.hpp, point.hpp, point.cpp, .gitignore, MakeFile, abstract_painter.hpp, painter.cpp, spainter.hpp si main.cpp</b>:
 <body >
     <ol>       
 
@@ -19,155 +19,108 @@ SnakeGame este o implementare clasică a jocului retro "Snake", în care jucăto
 
 
 
-<li><b>snake.cpp și snake.hpp:</b> </li>
+<li><b>src/snake.cpp și include/snake.hpp</b> </li>
      <ul>     
             
-<b>Modificări aduse:</b> 
-     <li>  În locul array-ului static de Point, acum folosim un container STL std::vector pentru a stoca segmentele șarpelui. Acest lucru face codul mai flexibil, permițând extinderea automată a vectorului atunci când șarpele crește.</li>
-     <li>Am înlocuit pointerii și alocările dinamice de memorie cu referințe și STL, eliminând necesitatea unui management manual al memoriei.</il>
-     <li>std::vector permite manipularea ușoară a segmentelor folosind algoritmi STL pentru căutare și manipulare.</il>
-</ul>
+<b>Schimbări:</b> 
+     <li>  Fără modificări directe, dar este compilat într-o bibliotecă statică, libsnake.a.</li>
+     
 <ul>
      
-<b>Descriere cod: </b>
-       <li>Clasa Snake reprezintă un șarpe cu o poziție și o direcție. Aceasta include metode pentru a muta (Move) și a crește (Grow) șarpele, precum și pentru a obține poziția capului (GetHeadPosition). Metodele folosesc referințe pentru parametri, asigurându-se că resursele sunt manipulate eficient.</il>
+<b>Rolul:</b>
+       <li>Controlează logica șarpelui, inclusiv mișcarea, creșterea și poziționarea acestuia pe tablă.</il>
 </ul>
 
 
 
 
 
-<li><b>painter.hpp și painter.cpp:</b> </li>
+<li><b>src/painter.cpp și include/painter.hpp:</b> </li>
      <ul>     
             
-<b>Clasa Painter:</b> 
-     <li>  Moștenește clasa AbstractPainter și implementează funcționalitatea pentru desenarea imaginilor și afișarea textului.</li>
+<b>Schimbări:</b> 
+     <li> Servește drept legătură între logica jocului și elementele grafice (e.g., desenarea șarpelui sau afișarea textului).</li>
 </ul>
 <ul>
      
 <b>Metodele Painter:</b>
-       <li>void DrawImage(Point topLeft, Point bottomRight, char** image):Desenează o imagine între punctele topLeft (stânga-sus) și bottomRight (dreapta-jos). Imaginea este reprezentată de un tablou bidimensional de caractere.</il>
-     <li>void WriteText(Point position, char* text):Afișează un text la coordonatele specificate de obiectul Point position.</il>
+       <li>Este compilat într-o bibliotecă statică, libpainter.a.</il>
+     <li>Acest modul este responsabil de redarea graficii pe ecran (text și imagini), folosind metode virtuale din AbstractPainter.</il>
 </ul>
 
 
 
 <li><b>.gitignore:</b> </li>
-           <ul>
-<li><b>CXX:</b>: definește compilatorul folosit, în acest caz g++.</li>
+
+<ul>
+<li><b>Schimbări:</b>Adăugarea unor reguli pentru a ignora fișiere generate automat, cum ar fi:</il>
+<li>Fișiere obiect (*.o).</il>
+<li>Biblioteci statice și dinamice (*.a, *.so).</il>
+<li>Executabile (*.exe, *.out)..</il>
+<li><b>Rolul:</b>Evită includerea în versiunea de control a fișierelor inutile sau temporare generate în timpul construirii.</il>
+
+</ul>
+
+
+
+
+
+
+
+
+
+<li><b>src/point.cpp și include/point.hpp</b> </li>
+     <ul>     
+            
+<b>Schimbări:</b>
+       <li>Fără modificări directe, dar codul acestei clase este folosit pentru a genera o bibliotecă statică, libpoint.a.</il>
 </ul>
 <ul>
-<li><b>CXXFLAGS:</b>: definește opțiunile de compilare, cum ar fi -Wall (pentru a afișa toate avertismentele) și -std=c++17 (pentru a folosi standardul C++17).</il>
-<li><b>EXEC:</b>: numele fișierului executabil rezultat.</il>
-<li><b>SRC:</b>: fișierele sursă .cpp care trebuie compilate. Trebuie să adăugați un fișier main.cpp, care va conține punctul de intrare (funcția main).</il>
-<li><b>OBJ:</b>: fișierele obiect rezultate din compilarea fișierelor sursă.</il>
-<li><b>all:</b>: regula implicită care creează programul final prin legarea fișierelor obiect.</il>
-<li><b>Grow</b>: Crește lungimea șarpelui adăugând un segment suplimentar la coadă, copiat din ultima poziție cunoscută a cozii.</il>
-<li><b>clean:</b>: o regulă pentru a șterge fișierele obiect și executabilul.</il>
+     
+<b>Rolul:</b>
+       <li>Gestionează coordonatele (punctele) în joc, fiind utilizată în diverse module (e.g., poziția șarpelui, limitele tablei de joc).</il>
+    
+</ul>
+
+
+
+
+
+<li><b>src/board.cpp și include/board.hpp</b> </li>
+     <ul>     
+            
+<b>Schimbări:</b>
+       <li>Similar cu point.cpp, este compilat într-o bibliotecă statică, libboard.a.</il>
+</ul>
+<ul>
+     
+<b>Rolul:</b>
+       <li>Definește dimensiunile tablei de joc, oferind un cadru pentru poziționarea elementelor din joc.</il>
+     
+
+   
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+<li><b>main.cpp:</b> </li>
+     <ul>     
+            
+<b>Constructori:</b>
+       <li>Exemplu de script principal care integrează funcționalitățile claselor Board, Snake și Painter. Este punctul de intrare al aplicației.</il>
        
+<b>Descriere cod:</b> 
+ <li>Permite utilizatorului să testeze modulele compilate și să construiască logica jocului. </li>
 </ul>
 
-
-
-
-<li><b>point.hpp:</b> </li>
-     <ul>     
-            
-<b>Structura Point:</b> 
-     <li>  Reprezintă o structură care conține două coordonate întregi: x și y, folosită pentru a reprezenta un punct în plan bidimensional.</li>
-</ul>
-<ul>
-     
-<b>Constructori:</b>
-       <li>Point(int _x = 0, int _y = 0) - Constructor implicit care inițializează punctul la valorile (0, 0) sau la valorile date de parametrii _x și _y.</il>
-     <li>  Point(const Point& other) - Constructor de copiere care inițializează un punct prin copierea valorilor unui alt punct</il>
-
-<b>Operatori:</b> 
-       <li>operator= - Suprascrie operatorul de atribuire (=) pentru a copia valorile de la un alt obiect Point.</il>
-       <li>  operator== - Suprascrie operatorul de comparație (==) pentru a verifica dacă două puncte sunt egale (au aceleași valori ale coordonatelor x și y).</il>
-          
-<b>Operatori de intrare și ieșire:</b>
-       <li>operator>> - Suprascrie operatorul de citire din flux (>>) pentru a citi valorile coordonatelor x și y dintr-un flux de intrare (cum ar fi un fișier sau tastatura).</il>
-       <li> operator<< - Suprascrie operatorul de afișare în flux (<<) pentru a afișa coordonatele unui punct într-un flux de ieșire (cum ar fi consola).</il>
-           
-</ul>
-
-
-
-
-
-<li><b>point.cpp:</b> </li>
-     <ul>     
-            
-<b>Constructori:</b>
-       <li>Point(int _x, int _y) - Inițializează obiectul Point cu valorile primite pentru coordonatele x și y.</il>
-     <li>  Point(const Point& other) - Copiază valorile coordonatelor x și y dintr-un alt obiect Point.</il>
-</ul>
-<ul>
-     
-<b>Operatori:</b>
-       <li>operator= - Copiază valorile coordonatelor dintr-un alt obiect Point. Returnează referința la obiectul curent pentru a permite atribuirea în lanț (e.g., p1 = p2 = p3).</il>
-     <li>  operator== - Compară coordonatele x și y ale obiectului curent cu cele ale unui alt punct. Returnează true dacă ambele coordonate sunt egale.</il>
-
-<b>Operatori de flux:</b> 
-       <li>operator>> - Permite citirea coordonatelor unui punct dintr-un flux de intrare, atribuind valorile respective obiectului Point.</il>
-       <li>  operator<< - Afișează coordonatele unui punct într-un flux de ieșire.</il>       
-</ul>
-
-
-
-
-
-<li><b>board.hpp:</b> </li>
-     <ul>     
-            
-<b>Clasa Board:</b>
-       <li>Reprezintă o tablă de joc cu două dimensiuni, width (lățime) și height (înălțime).</il>
-</ul>
-<ul>
-     
-<b>Constructori:</b>
-       <li>Board(int width = 20, int height = 20) - Inițializează obiectul cu lățimea și înălțimea specificată sau cu valorile implicite (20x20).</il>
-     <li> Board(const Board& other) - Constructor de copiere, copiază dimensiunile unui alt obiect Board.</il>
-
-<b>Metode:</b> 
-       <li>GetWidth() - Returnează lățimea tabloului.</il>
-       <li> GetHeight() - Returnează înălțimea tabloului.</il>     
-
- <b>Operatori:</b> 
-        <li>operator= - Suprascrie operatorul de atribuire pentru a copia dimensiunile unui alt obiect Board.</il>
-       <li> operator== - Compară dimensiunile a două obiecte Board pentru a verifica dacă sunt egale.</il>  
-       
-<b>Operatori de flux:</b> 
-        <li>operator>> - Citirea lățimii și înălțimii tabloului dintr-un flux de intrare.</il>
-       <li> operator<< - Afișarea lățimii și înălțimii tabloului într-un flux de ieșire.</il>    
-</ul>
-
-
-
-
-
-<li><b>board.cpp:</b> </li>
-     <ul>     
-            
-<b>Constructori:</b>
-       <li>Board(int width, int height) - Inițializează obiectul Board cu valorile primite pentru lățime și înălțime.</il>
-     <li>  Board(const Board& other) - Copiază dimensiunile unui alt obiect Board.</li>
-</ul>
-<ul>
-     
-<b>Metode:</b>
-       <li>GetWidth() - Returnează lățimea tabloului.</il>
-     <li> GetHeight() - Returnează înălțimea tabloului.</il>
-
-<b>Operatori:</b> 
-       <li>operator= - Copiază lățimea și înălțimea unui alt obiect Board. Returnează referința la obiectul curent pentru a permite atribuirea în lanț.</il>
-       <li> operator== - Compară lățimea și înălțimea a două obiecte Board. Returnează true dacă dimensiunile sunt egale.</il>     
-
- <b>Operatori de flux:</b> 
-        <li>operator>> - Citirea dimensiunilor tabloului dintr-un flux de intrare.</il>
-       <li> operator<< - Afișarea dimensiunilor tabloului într-un flux de ieșire.</il>      
-</ul>
 
 
 
@@ -207,10 +160,11 @@ SnakeGame este o implementare clasică a jocului retro "Snake", în care jucăto
            <ul>
                   
 <b>Modificări aduse:</b> 
-        <li> Makefile este actualizat pentru a include fișierul snake.cpp și pentru a compila cu setările corespunzătoare pentru standardul C++17, necesar pentru utilizarea STL și smart pointers.</li>
-        
+        <li> Am modularizat procesul de construire, astfel încât fiecare clasă (Point, Board, Painter, Snake) să fie compilată într-o bibliotecă statică (.a).</li>
+        <li>    Am adăugat reguli pentru crearea bibliotecilor și pentru legarea acestora cu fișierul principal.</li> 
+        <li> Curățarea (clean) șterge acum și fișierele .a și obiectele individuale. </li> 
 <b>Descriere cod:</b> 
-       <li>MMakefile definește reguli pentru compilarea și generarea executabilului final. Comanda make all compilează și leagă toate fișierele sursă, iar comanda make clean șterge fișierele temporare .o și executabilul.</li>        
+       <li>Controlează procesul de construire a aplicației, compiland fiecare modul separat și integrându-le într-un executabil final.</li>        
                    
 </ul>
 </ol>
